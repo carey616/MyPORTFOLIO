@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gladys Maina Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header with profile picture -->
+  <header>
+    <img src="assets/your-photo.jpg" alt="Gladys Maina" class="profile-pic-header" />
+    <div class="header-text">
+      <h1>Gladys Maina</h1>
+      <p>Front-End Developer | Tech Support | Graphic Designer </p>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+       <a href="#skills">Skills</a>
+       <a href="#projects">Projects</a>
+      <a href="#services">Hardware & Software</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>
+    <strong>Gladys Maina</strong>, a passionate and versatile tech professional with a strong foundation in front-end development,Back-end development, networking, and computer hardware support. I recently completed my studies in Computer Science and have built a variety of projects that showcase my creativity, problem-solving skills, and hands-on technical expertise.
+    </p>
+    <p>
+      I am especially passionate about using technology to solve real-world problems, simplify processes, and empower others. Whether it’s designing user-friendly interfaces, troubleshooting hardware issues, or creating engaging posters and cards using Canva, I strive to blend functionality with creativity in everything I do.
+    </p>
+    <p>
+      My goal is to work in a dynamic, growth-focused environment where I can contribute to meaningful projects while continuously learning and expanding my skillset in both software and hardware domains.
+    </p>
+    <a href="assets/Gladys-Maina-Resume.pdf" class="btn" download>📄 Download My Resume</a>
+  </section>
+   <!-- Skills Section -->
+ <section id="skills" class="fade-in">
+    <h2>My Skills</h2>
+  
+    <div class="skills-category">
+      <h3>💻 Technical Skills</h3>
+      <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>PHP & MySQL</li>
+        <li>Computer Networking</li>
+        <li>OS Installation (Windows, Linux)</li>
+        <li>Hardware Repair & Maintenance</li>
+      </ul>
+    </div>
+  
+    <div class="skills-category">
+      <h3>🎨 Design Tools</h3>
+      <ul>
+        <li>Canva (Posters, Invitations, Cards)</li>
+        <li>Figma (UI/UX Prototyping)</li>
+        <li>Adobe Photoshop (Basic Editing)</li>
+      </ul>
+    </div>
+  
+    <div class="skills-category">
+      <h3>🤝 Soft Skills</h3>
+      <ul>
+        <li>Communication</li>
+        <li>Problem Solving</li>
+        <li>Teamwork & Collaboration</li>
+        <li>Time Management</li>
+      </ul>
+    </div>
+  </section>
+  
+
+  <!-- Projects & Designs Section -->
+  <section id="projects" class="fade-in">
+    <h2>Projects & Designs</h2>
+
+    <!-- Coding Projects -->
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Personal Finance Management System</h3>
+        <p>Manages budgeting, savings, debt, and investments.</p>
+        <a href="#">View on GitHub</a>
+      </div>
+      <!-- Add more coding projects here -->
+    </div>
+
+  
+    <!-- Graphic Design Projects -->
+    <h3>Graphic Design Work</h3>
+    <div class="design-grid">
+      <div class="design-card">
+        <img src="assets/poster1.jpg" alt="Event Poster" />
+        <p>Event Poster designed using Canva.</p>
+      </div>
+      <div class="design-card">
+        <img src="assets/invitation1.jpg" alt="Invitation Card" />
+        <p>Wedding Invitation card.</p>
+      </div>
+      <!-- Add more designs here -->
+    </div>
+  </section>
+
+  <section id="services" class="fade-in">
+    <h2>💼 Hardware & Tech Services</h2>
+    <p>I offer a variety of hands-on computer support services. Below are some of the key services I provide:</p>
+  
+    <div class="service-list">
+      <div class="service-card">
+        <h3>🛠 Computer & Laptop Repairs</h3>
+        <p>Diagnosing and repairing hardware problems such as faulty RAM, broken screens, overheating, and motherboard issues.</p>
+      </div>
+  
+      <div class="service-card">
+        <h3>💽 OS & Software Installation</h3>
+        <p>Installing and setting up Windows, Linux, and essential productivity or antivirus software tailored to the user's needs.</p>
+      </div>
+  
+      <div class="service-card">
+        <h3>🔌 Diagnostics & Optimization</h3>
+        <p>Running system diagnostics, cleaning up slow computers, updating drivers, and optimizing performance for better speed.</p>
+      </div>
+    </div>
+  
+    <div class="testimonials">
+      <h3>What Clients Say</h3>
+      <blockquote>
+        "Gladys fixed my laptop's overheating issue and installed a clean OS setup. It runs like new again. Highly recommended!"  
+        <footer>— Peter M., Small Business Owner</footer>
+      </blockquote>
+    </div>
+  </section>
+  
+
+  
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <p>You can reach me via email at <a href="mailto:wmaina1010@gmail.com">wmaina1010@gmail.com</a><br>
+    or via phone +254748071749
+    </p>
+  </section>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+  
+</body>
+</html>
