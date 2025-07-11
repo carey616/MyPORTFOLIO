@@ -163,11 +163,10 @@
       navLinks.classList.toggle('show');
     });
   </script>
-  <img 
-  src="ngrok http 5678" 
-  width="1" 
-  height="1" 
-  style="display: ;" 
-  alt="tracker" />
+  
+<script>
+  fetch("https://your-n8n-host/webhook/portfolio-visit")
+    .catch(err => console.error("Tracking failed", err));
+</script>
 </body>
 </html>
