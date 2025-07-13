@@ -186,6 +186,45 @@
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
+    // Profile pic zoom logic (if you want to keep JS in a separate file)
+const profilePic = document.querySelector('.profile-pic-header');
+const zoomOverlay = document.querySelector('.zoom-overlay');
+
+function zoomIn() {
+  profilePic.classList.add('zoomed');
+  zoomOverlay.classList.add('show');
+}
+function zoomOut() {
+  profilePic.classList.remove('zoomed');
+  zoomOverlay.classList.remove('show');
+}
+
+// Zoom in on click/touch
+profilePic.addEventListener('click', (e) => {
+  if (!profilePic.classList.contains('zoomed')) {
+    zoomIn();
+  } else {
+    zoomOut();
+  }
+  e.stopPropagation();
+});
+profilePic.addEventListener('touchstart', (e) => {
+  if (!profilePic.classList.contains('zoomed')) {
+    zoomIn();
+  } else {
+    zoomOut();
+  }
+  e.stopPropagation();
+});
+
+// Zoom out on overlay click/touch
+zoomOverlay.addEventListener('click', zoomOut);
+zoomOverlay.addEventListener('touchstart', zoomOut);
+
+// Zoom out with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') zoomOut();
+});
   </script>
   
 <script>
