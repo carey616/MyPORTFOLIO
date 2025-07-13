@@ -16,7 +16,31 @@
       <p>Front-End Developer | Tech Support | Graphic Designer </p>
     </div>
   </header>
-
+ <style>
+    /* Zoom effect for profile picture */
+    .profile-pic-header {
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      z-index: 10;
+      position: relative;
+    }
+    .profile-pic-header.zoomed {
+      transform: scale(2);
+      z-index: 11;
+      position: relative;
+    }
+    .zoom-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.4);
+      z-index: 10;
+      display: none;
+    }
+    .zoom-overlay.show {
+      display: block;
+    }
+  </style>
   <!-- Navbar -->
   <nav>
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
