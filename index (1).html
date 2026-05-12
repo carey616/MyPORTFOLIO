@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gladys Maina – IT Support & Systems Administrator specializing in VPS infrastructure, Docker, Google Workspace, DNS, web operations, and workflow automation.">
+<meta property="og:title" content="Gladys Maina | IT Infrastructure & Systems Administrator">
+<meta property="og:description" content="IT professional managing VPS infrastructure, Docker containers, Google Workspace, DNS, and building workflow automations with Make.com, Zapier, n8n, and custom APIs.">
+<meta property="og:type" content="website">
+<title>Gladys Maina | IT Infrastructure & Systems Administrator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1a2744;
+    --navy-mid: #243358;
+    --navy-light: #2e4070;
+    --slate: #4a5568;
+    --slate-light: #718096;
+    --silver: #a0aec0;
+    --fog: #e2e8f0;
+    --mist: #f0f4f8;
+    --white: #ffffff;
+    --accent: #3b82f6;
+    --accent-soft: #dbeafe;
+    --accent-dim: #93c5fd;
+    --green-soft: #d1fae5;
+    --green-text: #065f46;
+    --amber-soft: #fef3c7;
+    --amber-text: #92400e;
+    --red-soft: #fee2e2;
+    --red-text: #991b1b;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--fog);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--slate);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    padding: 7px 18px;
+    border-radius: 6px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--navy-light) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(150deg, var(--navy) 0%, var(--navy-mid) 50%, #1e3a5f 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 2rem;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(59,130,246,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 40%);
+  }
+
+  .hero-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59,130,246,0.2);
+    border: 1px solid rgba(59,130,246,0.35);
+    color: #93c5fd;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #4ade80;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .hero h1 span {
+    color: #93c5fd;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.75rem;
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 4px 12px;
+    border-radius: 5px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 11px 24px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    padding: 11px 24px;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.06); }
+
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    backdrop-filter: blur(4px);
+  }
+
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2e4070, #3b82f6);
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: white;
+    border: 3px solid rgba(255,255,255,0.2);
+    overflow: hidden;
+  }
+
+  .avatar-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .hero-card-name {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .hero-card-role {
+    text-align: center;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.82rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .stat-box {
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: #93c5fd;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 5rem 2rem;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--navy);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+
+  .section-desc {
+    color: var(--slate);
+    max-width: 580px;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+  }
+
+  /* SKILLS */
+  #skills { background: var(--mist); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--white);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .skill-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    font-size: 1.3rem;
+  }
+
+  .skill-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .skill-list li {
+    font-size: 0.875rem;
+    color: var(--slate);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .skill-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* STACK BADGES */
+  .stack-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--fog);
+  }
+
+  .stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  .stack-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--white);
+    border: 1px solid var(--fog);
+    border-radius: 7px;
+    padding: 7px 14px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--slate);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .stack-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .project-card {
+    border: 1px solid var(--fog);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+  }
+
+  .project-img {
+    height: 180px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.25);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 30% 70%, rgba(59,130,246,0.2) 0%, transparent 60%);
+  }
+
+  .project-img-icon {
+    font-size: 2.5rem;
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  .project-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 0.9rem;
+  }
+
+  .project-cat {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  .cat-infra { background: #dbeafe; color: #1e40af; }
+  .cat-docker { background: #e0f2fe; color: #0c4a6e; }
+  .cat-dns { background: #f0fdf4; color: #14532d; }
+  .cat-workspace { background: #fef3c7; color: #78350f; }
+  .cat-web { background: #f5f3ff; color: #4c1d95; }
+  .cat-design { background: #fce7f3; color: #831843; }
+
+  .project-body h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+  }
+
+  .project-body p {
+    font-size: 0.875rem;
+    color: var(--slate);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1.25rem;
+  }
+
+  .tech-tag {
+    font-size: 0.72rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--slate-light);
+    background: var(--mist);
+    border: 1px solid var(--fog);
+    padding: 2px 9px;
+    border-radius: 4px;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 10px;
+  }
+
+  .project-link {
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 6px 16px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .project-link:hover {
+    background: var(--accent);
+    color: white;
+  }
+
+  .project-link.ghost {
+    color: var(--slate);
+    border-color: var(--fog);
+  }
+
+  .project-link.ghost:hover {
+    background: var(--fog);
+    color: var(--navy);
+  }
+
+  /* RESPONSIBILITIES */
+  #responsibilities { background: var(--navy); }
+
+  #responsibilities .section-label { color: #93c5fd; }
+  #responsibilities .section-title { color: white; }
+  #responsibilities .section-desc { color: rgba(255,255,255,0.6); }
+
+  .resp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .resp-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .resp-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .resp-item p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+  }
+
+  /* PROBLEMS SOLVED */
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .problem-card {
+    background: var(--white);
+    border: 1px solid var(--fog);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .problem-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .problem-card p {
+    font-size: 0.85rem;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+
+  /* DIAGRAM */
+  .diagram-wrapper {
+    background: var(--mist);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    margin-top: 3rem;
+  }
+
+  .diagram-wrapper h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .arch-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .arch-node {
+    background: var(--white);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius);
+    padding: 12px 20px;
+    text-align: center;
+    min-width: 110px;
+  }
+
+  .arch-node .node-icon { font-size: 1.4rem; margin-bottom: 4px; display: block; }
+  .arch-node .node-label { font-size: 0.8rem; font-weight: 600; color: var(--navy); display: block; }
+  .arch-node .node-sub { font-size: 0.7rem; color: var(--silver); display: block; font-family: 'JetBrains Mono', monospace; }
+
+  .arch-arrow {
+    color: var(--silver);
+    font-size: 1.2rem;
+    padding: 0 8px;
+    flex-shrink: 0;
+  }
+
+  /* ABOUT */
+  #about { background: var(--mist); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--slate);
+    font-size: 0.95rem;
+    margin-bottom: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .about-text p strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .about-contact {
+    background: var(--white);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .about-contact h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--fog);
+    text-decoration: none;
+    color: var(--slate);
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+
+  .contact-item:last-child { border-bottom: none; }
+  .contact-item:hover { color: var(--accent); }
+
+  .contact-icon {
+    width: 34px;
+    height: 34px;
+    background: var(--accent-soft);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+    color: var(--accent);
+  }
+
+  /* CERTS */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert-card {
+    border: 1px solid var(--fog);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--white);
+  }
+
+  .cert-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .cert-card p {
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+
+  .cert-card span {
+    font-size: 0.75rem;
+    color: var(--silver);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 0.82rem;
+  }
+
+  footer strong {
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* MOBILE NAV */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--navy);
+    padding: 4px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: block; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: white;
+      border-bottom: 1px solid var(--fog);
+      padding: 1.5rem 2rem;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-md);
+    }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .arch-flow { gap: 6px; }
+    .arch-arrow { display: none; }
+    section { padding: 3.5rem 1.25rem; }
+  }
+
+  /* SCROLL ANIMATION */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Gladys Maina</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#automation">Automation</a></li>
+    <li><a href="#responsibilities">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge">Available for opportunities</div>
+      <h1>IT Infrastructure &amp;<br><span>Systems Administrator</span></h1>
+      <p class="hero-sub">I manage VPS infrastructure, Docker containers, Google Workspace, DNS configuration, and web operations — keeping organizational systems reliable and running smoothly.</p>
+      <div class="hero-tags">
+        <span class="tag">Linux VPS</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Google Workspace</span>
+        <span class="tag">DNS</span>
+        <span class="tag">SSH</span>
+        <span class="tag">Make.com</span>
+        <span class="tag">Zapier</span>
+        <span class="tag">n8n</span>
+        <span class="tag">REST APIs</span>
+      </div>
+      <div class="hero-actions">
+        <a href="https://raw.githubusercontent.com/carey616/MyPORTFOLIO/main/GMaina%20Resume.pdf" class="btn-primary" target="_blank">
+          📄 Download Resume
+        </a>
+        <a href="#projects" class="btn-ghost">View Projects →</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="avatar-placeholder">
+        <img src="https://carey616.github.io/MyPORTFOLIO/portraitG.jpg" alt="Gladys Maina" onerror="this.style.display='none'; this.parentElement.innerText='GM';">
+      </div>
+      <div class="hero-card-name">Gladys Maina</div>
+      <div class="hero-card-role">Nairobi, Kenya · Open to Remote</div>
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-num">8+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">8+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">SaaS</span>
+          <span class="stat-label">In Dev</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">CS</span>
+          <span class="stat-label">Graduate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Infrastructure-first,<br>reliability-driven</h2>
+        <p><strong>Gladys Maina</strong> is a versatile IT professional with a strong foundation in infrastructure management, systems administration, and web operations. A Computer Science graduate based in Nairobi, Kenya.</p>
+        <p>My work centers on managing VPS infrastructure, deploying and maintaining Docker containers, administering Google Workspace environments, and ensuring reliable DNS and domain operations — the kind of hands-on systems work that keeps organizations running.</p>
+        <p>Beyond infrastructure, I bring front-end development skills (HTML, CSS, JavaScript, PHP) and a design eye that lets me bridge the gap between technical operations and the user-facing web.</p>
+        <p>I also build workflow automations and API integrations using Make.com, Zapier, n8n, and custom REST APIs — connecting systems, eliminating manual work, and currently developing a tenant management SaaS platform with M-Pesa payment integration for the Kenyan market.</p>
+        <p>I thrive in dynamic environments where uptime matters, problems are real, and solutions need to be both technically sound and clearly communicated.</p>
+        <div style="margin-top:1.5rem;">
+          <a href="https://raw.githubusercontent.com/carey616/MyPORTFOLIO/main/GMaina%20Resume.pdf" class="btn-primary" target="_blank" style="display:inline-flex; font-size:0.875rem; padding:10px 20px;">📄 Download Resume</a>
+        </div>
+      </div>
+      <div class="about-contact fade-in" id="contact">
+        <h3>Get in touch</h3>
+        <a href="mailto:wmaina1010@gmail.com" class="contact-item">
+          <span class="contact-icon">✉️</span>
+          wmaina1010@gmail.com
+        </a>
+        <a href="tel:+254748071749" class="contact-item">
+          <span class="contact-icon">📞</span>
+          +254 748 071 749
+        </a>
+        <a href="https://github.com/carey616" target="_blank" class="contact-item">
+          <span class="contact-icon">🐙</span>
+          github.com/carey616
+        </a>
+        <a href="https://carey616.github.io/MyPORTFOLIO/" target="_blank" class="contact-item">
+          <span class="contact-icon">🌐</span>
+          Current Portfolio
+        </a>
+        <div style="margin-top:1.25rem;">
+          <a href="mailto:wmaina1010@gmail.com" class="btn-primary" style="width:100%; justify-content:center; font-size:0.85rem; padding:10px;">Send a Message</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Technical Skills</div>
+    <h2 class="section-title">Infrastructure stack &amp; capabilities</h2>
+    <p class="section-desc">A full-spectrum skill set spanning infrastructure operations, cloud productivity, and web development.</p>
+
+    <div class="skills-grid fade-in">
+      <div class="skill-card">
+        <div class="skill-card-icon">🖥️</div>
+        <h3>Infrastructure &amp; Systems</h3>
+        <ul class="skill-list">
+          <li>Linux VPS Management</li>
+          <li>Docker Container Management</li>
+          <li>SSH &amp; Remote Server Access</li>
+          <li>Website Hosting</li>
+          <li>DNS Configuration</li>
+          <li>Domain Management</li>
+          <li>SSL Configuration</li>
+          <li>Server Troubleshooting</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">☁️</div>
+        <h3>Cloud &amp; Productivity</h3>
+        <ul class="skill-list">
+          <li>Google Workspace Administration</li>
+          <li>Email Configuration &amp; MX Records</li>
+          <li>User &amp; Access Management</li>
+          <li>Domain Verification (TXT/CNAME)</li>
+          <li>Hostinger VPS</li>
+          <li>Namecheap DNS Management</li>
+          <li>cPanel / Plesk</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🌐</div>
+        <h3>Web Technologies</h3>
+        <ul class="skill-list">
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <li>PHP &amp; MySQL</li>
+          <li>Responsive Design</li>
+          <li>Figma (UI/UX Prototyping)</li>
+          <li>Adobe Photoshop</li>
+          <li>Canva</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🔧</div>
+        <h3>Hardware &amp; Support</h3>
+        <ul class="skill-list">
+          <li>Computer &amp; Laptop Repairs</li>
+          <li>OS Installation (Windows, Linux)</li>
+          <li>Driver Updates &amp; Optimization</li>
+          <li>Network Setup &amp; Troubleshooting</li>
+          <li>System Diagnostics</li>
+          <li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">⚡</div>
+        <h3>Workflow &amp; Automation</h3>
+        <ul class="skill-list">
+          <li>Make.com (Integromat)</li>
+          <li>Zapier Workflows</li>
+          <li>n8n Automation</li>
+          <li>REST API Integrations</li>
+          <li>Webhooks</li>
+          <li>Google Sheets Automation</li>
+          <li>CRM Integrations</li>
+          <li>M-Pesa API (in dev)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack-section fade-in">
+      <div class="section-label">Infrastructure Stack</div>
+      <div class="stack-grid">
+        <span class="stack-badge"><span class="stack-dot" style="background:#f97316;"></span>Linux</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#2496ed;"></span>Docker</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#4285f4;"></span>Google Workspace</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#34a853;"></span>DNS / MX / TXT</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#6366f1;"></span>VPS Hosting</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#0f172a;"></span>SSH</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#e25d33;"></span>PHP &amp; MySQL</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#f0db4f;"></span>JavaScript</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#181717;"></span>Git &amp; GitHub</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#22c55e;"></span>SSL / HTTPS</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#a855f7;"></span>Make.com</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#ff4a00;"></span>Zapier</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#ea4b71;"></span>n8n</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#10b981;"></span>REST APIs</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#059669;"></span>Webhooks</span>
+        <span class="stack-badge"><span class="stack-dot" style="background:#16a34a;"></span>M-Pesa API</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">Real systems. Real work.</h2>
+    <p class="section-desc">Hands-on infrastructure and development projects demonstrating operational expertise across production environments.</p>
+
+    <div class="projects-grid fade-in">
+
+      <div class="project-card">
+        <div class="project-img">
+          <span class="project-img-icon">🖥️</span>
+        </div>
+        <div class="project-body">
+          <div class="project-cats">
+            <span class="project-cat cat-infra">Infrastructure</span>
+            <span class="project-cat cat-docker">Docker</span>
+          </div>
+          <h3>VPS Infrastructure &amp; Website Operations</h3>
+          <p>Created and managed a production VPS server environment, including Docker container orchestration, website uptime maintenance, SSH access management, and domain/DNS integration. Handled deployment troubleshooting and system reliability.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">VPS</span>
+            <span class="tech-tag">SSH</span>
+            <span class="tech-tag">DNS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/carey616" class="project-link" target="_blank">GitHub →</a>
+            <a href="#" class="project-link ghost">Add Screenshot</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <span class="project-img-icon">🐳</span>
+        </div>
+        <div class="project-body">
+          <div class="project-cats">
+            <span class="project-cat cat-docker">Docker</span>
+          </div>
+          <h3>Docker Container Deployment &amp; Management</h3>
+          <p>Set up and managed Docker containers for running production services. Handled container lifecycle — setup, monitoring, restart/rebuild workflows, and troubleshooting. Managed running services and ensured container availability.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">Container Ops</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/carey616" class="project-link" target="_blank">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <span class="project-img-icon">📧</span>
+        </div>
+        <div class="project-body">
+          <div class="project-cats">
+            <span class="project-cat cat-workspace">Google Workspace</span>
+            <span class="project-cat cat-dns">DNS</span>
+          </div>
+          <h3>Google Workspace Administration</h3>
+          <p>Administered Google Workspace for an organization — domain verification, MX record configuration, user account management, email setup, and workspace migration support. Managed DNS records including MX, TXT, and CNAME for mail delivery.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Google Workspace</span>
+            <span class="tech-tag">MX Records</span>
+            <span class="tech-tag">TXT/CNAME</span>
+            <span class="tech-tag">DNS</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link ghost">Add Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <span class="project-img-icon">🌐</span>
+        </div>
+        <div class="project-body">
+          <div class="project-cats">
+            <span class="project-cat cat-dns">DNS</span>
+            <span class="project-cat cat-infra">Infrastructure</span>
+          </div>
+          <h3>Domain &amp; DNS Migration Project</h3>
+          <p>Migrated DNS management from Namecheap to Hostinger, transferring all records while ensuring zero disruption to Google Workspace mail and web services. Reduced downtime risks during transition through careful record sequencing.</p>
+          <div class="project-tech">
+            <span class="tech-tag">DNS Migration</span>
+            <span class="tech-tag">Namecheap</span>
+            <span class="tech-tag">Hostinger</span>
+            <span class="tech-tag">Google Workspace</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link ghost">Add Case Study</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <span class="project-img-icon">🤖</span>
+        </div>
+        <div class="project-body">
+          <div class="project-cats">
+            <span class="project-cat cat-web">Web Integration</span>
+          </div>
+          <h3>Chatbot Integration &amp; Website Embedding</h3>
+          <p>Implemented and integrated a chatbot into an organizational website. Handled the integration process, website embedding, testing, and optimization — demonstrating practical systems integration capability beyond basic front-end work.</p>
+          <div class="project-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">HTML/CSS</span>
+            <span class="tech-tag">API Integration</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/carey616" class="project-link" target="_blank">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" style="border: 2px solid #a855f7; position: relative;">
+        <div style="position:absolute; top:12px; right:12px; background:#a855f7; color:white; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:100px; letter-spacing:0.05em;">🚀 Active SaaS</div>
+        <div class="project-img" style="background: linear-gradient(135deg, #2e1065, #4c1d95);">
+          <span class="project-img-icon">🏠</span>
+        </div>
+        <div class="project-body">
+          <div class="project-cats">
+            <span class="project-cat cat-web">SaaS Platform</span>
+            <span class="project-cat" style="background:#f3e8ff;color:#6b21a8;">M-Pesa</span>
+          </div>
+          <h3>Tenant Management SaaS — Landlords &amp; Agents Platform</h3>
+          <p>A multi-tenant SaaS platform enabling landlords and property agents in Kenya to manage tenants, track rent payments, handle lease agreements, and communicate with tenants — with M-Pesa payment integration actively in development for seamless mobile money rent collection.</p>
+          <div class="project-tech">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">M-Pesa API</span>
+            <span class="tech-tag">REST APIs</span>
+            <span class="tech-tag">VPS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/carey616" class="project-link" target="_blank">GitHub →</a>
+            <span style="font-size:0.78rem; color:#a855f7; font-weight:600; padding:6px 0; display:inline-flex; align-items:center; gap:5px;">⚡ In Development</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img" style="background: linear-gradient(135deg, #1e3a5f, #1a4532);">
+          <span class="project-img-icon">⚡</span>
+        </div>
+        <div class="project-body">
+          <div class="project-cats">
+            <span class="project-cat" style="background:#f3e8ff;color:#6b21a8;">Automation</span>
+            <span class="project-cat" style="background:#ecfdf5;color:#065f46;">APIs</span>
+          </div>
+          <h3>Workflow Automation &amp; API Integrations</h3>
+          <p>Built multi-step automated workflows connecting Google Sheets, CRM systems, email platforms, and third-party tools using Make.com, Zapier, and n8n. Implemented custom REST API and webhook integrations to eliminate manual data entry and sync systems in real time.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Make.com</span>
+            <span class="tech-tag">Zapier</span>
+            <span class="tech-tag">n8n</span>
+            <span class="tech-tag">REST APIs</span>
+            <span class="tech-tag">Webhooks</span>
+            <span class="tech-tag">Google Sheets</span>
+            <span class="tech-tag">CRM</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/carey616" class="project-link" target="_blank">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="diagram-wrapper fade-in">
+      <h3>Infrastructure Architecture</h3>
+      <div class="arch-flow">
+        <div class="arch-node">
+          <span class="node-icon">👤</span>
+          <span class="node-label">User</span>
+          <span class="node-sub">Browser / Client</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">🌐</span>
+          <span class="node-label">Domain</span>
+          <span class="node-sub">Namecheap</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">📡</span>
+          <span class="node-label">DNS</span>
+          <span class="node-sub">A / CNAME / MX</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">🖥️</span>
+          <span class="node-label">VPS Server</span>
+          <span class="node-sub">Hostinger Linux</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">🐳</span>
+          <span class="node-label">Docker</span>
+          <span class="node-sub">Containers</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">🌍</span>
+          <span class="node-label">Website</span>
+          <span class="node-sub">Live Service</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW AUTOMATION -->
+<section id="automation" style="background: var(--mist);">
+  <div class="section-inner">
+    <div class="section-label">Workflow Automation &amp; Integrations</div>
+    <h2 class="section-title">Connecting systems. Eliminating manual work.</h2>
+    <p class="section-desc">Building automated workflows and API integrations that link tools, sync data in real time, and scale operations without adding headcount.</p>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;" class="fade-in">
+
+      <div style="background:var(--white); border:1px solid var(--fog); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:42px;height:42px;border-radius:10px;background:#f3e8ff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">⚙️</div>
+          <div>
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);">Make.com (Integromat)</div>
+            <div style="font-size:0.78rem;color:var(--silver);">Visual workflow builder</div>
+          </div>
+        </div>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;">Built multi-step visual scenarios connecting apps like Google Sheets, Gmail, CRMs, and web services. Handles branching logic, data transformation, and error routing for complex business workflows.</p>
+      </div>
+
+      <div style="background:var(--white); border:1px solid var(--fog); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:42px;height:42px;border-radius:10px;background:#fff0eb;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">⚡</div>
+          <div>
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);">Zapier</div>
+            <div style="font-size:0.78rem;color:var(--silver);">App-to-app automation</div>
+          </div>
+        </div>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;">Automated lead capture, form submissions, notifications, and data syncing across platforms. Connected Google Sheets to CRMs, email tools, and project management systems with trigger-action Zaps.</p>
+      </div>
+
+      <div style="background:var(--white); border:1px solid var(--fog); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:42px;height:42px;border-radius:10px;background:#fce7f3;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">🔁</div>
+          <div>
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);">n8n</div>
+            <div style="font-size:0.78rem;color:var(--silver);">Self-hosted automation</div>
+          </div>
+        </div>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;">Deployed and managed self-hosted n8n instances for internal workflow automation. Built custom nodes and HTTP request flows for integrations not available in hosted platforms.</p>
+      </div>
+
+      <div style="background:var(--white); border:1px solid var(--fog); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:42px;height:42px;border-radius:10px;background:#dcfce7;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">🔌</div>
+          <div>
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);">REST APIs &amp; Webhooks</div>
+            <div style="font-size:0.78rem;color:var(--silver);">Custom integrations</div>
+          </div>
+        </div>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;">Built custom REST API integrations and webhook listeners to connect systems that don't have native connectors. Currently integrating Safaricom's M-Pesa Daraja API for mobile money payments in a SaaS platform.</p>
+      </div>
+
+      <div style="background:var(--white); border:1px solid var(--fog); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:42px;height:42px;border-radius:10px;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">📊</div>
+          <div>
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);">Google Sheets Automation</div>
+            <div style="font-size:0.78rem;color:var(--silver);">Data workflows</div>
+          </div>
+        </div>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;">Automated data collection, reporting, and syncing pipelines using Google Sheets as a central data hub — connected to forms, CRMs, and external APIs for real-time data updates without manual input.</p>
+      </div>
+
+      <div style="background:var(--white); border:1px solid var(--fog); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:42px;height:42px;border-radius:10px;background:#fef3c7;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">🏢</div>
+          <div>
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);">CRM Integrations</div>
+            <div style="font-size:0.78rem;color:var(--silver);">Business process automation</div>
+          </div>
+        </div>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;">Integrated CRM systems with external tools for lead management, automated follow-ups, client onboarding flows, and data synchronization — reducing manual tasks and keeping pipelines accurate.</p>
+      </div>
+
+    </div>
+
+    <!-- Automation flow diagram -->
+    <div class="diagram-wrapper fade-in" style="margin-top:2.5rem;">
+      <h3>Automation Architecture</h3>
+      <div class="arch-flow">
+        <div class="arch-node">
+          <span class="node-icon">📥</span>
+          <span class="node-label">Trigger</span>
+          <span class="node-sub">Form / Webhook</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">⚙️</span>
+          <span class="node-label">Automation</span>
+          <span class="node-sub">Make / Zapier / n8n</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">🔌</span>
+          <span class="node-label">API Call</span>
+          <span class="node-sub">REST / Webhook</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">📊</span>
+          <span class="node-label">Data Sync</span>
+          <span class="node-sub">Sheets / CRM</span>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="node-icon">✅</span>
+          <span class="node-label">Output</span>
+          <span class="node-sub">Email / SMS / Record</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="responsibilities">
+  <div class="section-inner">
+    <div class="section-label">Technical Responsibilities</div>
+    <h2 class="section-title">Current operational scope</h2>
+    <p class="section-desc">Day-to-day infrastructure and systems management responsibilities demonstrating real-world operational experience.</p>
+    <div class="resp-grid fade-in">
+      <div class="resp-item">
+        <span class="resp-icon">🖥️</span>
+        <p>Managing VPS infrastructure and ensuring continuous server availability</p>
+      </div>
+      <div class="resp-item">
+        <span class="resp-icon">⬆️</span>
+        <p>Maintaining website uptime and monitoring deployment health</p>
+      </div>
+      <div class="resp-item">
+        <span class="resp-icon">🐳</span>
+        <p>Docker container administration — setup, monitoring, and recovery</p>
+      </div>
+      <div class="resp-item">
+        <span class="resp-icon">📧</span>
+        <p>Google Workspace administration and organizational email management</p>
+      </div>
+      <div class="resp-item">
+        <span class="resp-icon">📡</span>
+        <p>DNS configuration, troubleshooting, and record management</p>
+      </div>
+      <div class="resp-item">
+        <span class="resp-icon">🔧</span>
+        <p>Technical support and infrastructure issue resolution</p>
+      </div>
+      <div class="resp-item">
+        <span class="resp-icon">🌐</span>
+        <p>Domain and email system management across multiple providers</p>
+      </div>
+      <div class="resp-item">
+        <span class="resp-icon">🚀</span>
+        <p>Web deployment support and production operations oversight</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS SOLVED -->
+<section id="problems" style="background: var(--mist);">
+  <div class="section-inner">
+    <div class="section-label">Problems Solved</div>
+    <h2 class="section-title">Operational challenges tackled</h2>
+    <p class="section-desc">Real infrastructure problems requiring diagnosis, analysis, and hands-on resolution — demonstrating operational maturity.</p>
+    <div class="problems-grid fade-in">
+      <div class="problem-card">
+        <h4>DNS Propagation Issues</h4>
+        <p>Diagnosed and resolved DNS propagation delays during domain migrations, ensuring minimal disruption to live services and email delivery.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Email Delivery Failures</h4>
+        <p>Resolved email delivery problems by correctly configuring MX records, SPF TXT records, and DKIM settings in Google Workspace environments.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Website Uptime During Migrations</h4>
+        <p>Maintained uninterrupted website availability during infrastructure changes and DNS migrations through careful TTL planning and record sequencing.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Container Deployment Failures</h4>
+        <p>Troubleshot and resolved Docker container deployment failures, restoring services through container rebuilds, log analysis, and configuration fixes.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Google Workspace Email Authentication</h4>
+        <p>Configured Google Workspace email authentication records correctly after initial setup failures, restoring full organizational email functionality.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Hardware Overheating &amp; Performance</h4>
+        <p>Diagnosed and resolved laptop overheating and performance issues through hardware maintenance, OS reinstallation, and system optimization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="section-label">Certifications &amp; Education</div>
+    <h2 class="section-title">Credentials &amp; continuous learning</h2>
+    <p class="section-desc">Academic foundation combined with ongoing professional development in infrastructure and systems administration.</p>
+    <div class="certs-grid fade-in">
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#dbeafe;">🎓</div>
+        <div>
+          <p>BSc Computer Science</p>
+          <span>University Graduate</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#dcfce7;">🐧</div>
+        <div>
+          <p>Linux Essentials</p>
+          <span>Add provider / year</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#fef3c7;">🐳</div>
+        <div>
+          <p>Docker Fundamentals</p>
+          <span>Add provider / year</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#f0fdf4;">📧</div>
+        <div>
+          <p>Google Workspace Admin</p>
+          <span>Add provider / year</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#f5f3ff;">🌐</div>
+        <div>
+          <p>Google IT Support</p>
+          <span>Add provider / year</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#fce7f3;">☁️</div>
+        <div>
+          <p>AWS Cloud Practitioner</p>
+          <span>Add if completed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Gladys Maina</strong> · IT Infrastructure &amp; Systems Administrator · Nairobi, Kenya</p>
+  <p style="margin-top:8px;">wmaina1010@gmail.com · +254 748 071 749</p>
+  <p style="margin-top:8px; font-size:0.75rem;">© 2025 Gladys Maina. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById('navLinks').classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
